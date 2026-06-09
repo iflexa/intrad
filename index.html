@@ -18,69 +18,53 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
+background:linear-gradient(135deg,#0f172a,#111827,#1e293b);
+color:white;
 min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(
-135deg,
-#0f172a,
-#111827,
-#1e293b
-);
-padding:20px;
-overflow:hidden;
+overflow-x:hidden;
 }
 
-body::before{
-content:'';
-position:absolute;
+.bg-blur{
+position:fixed;
 width:400px;
 height:400px;
-background:#00aaff;
-filter:blur(150px);
-opacity:.25;
+border-radius:50%;
+background:#0088cc;
+filter:blur(180px);
+opacity:.15;
 top:-100px;
 left:-100px;
+z-index:-1;
 }
 
-body::after{
-content:'';
-position:absolute;
+.bg-blur2{
+position:fixed;
 width:350px;
 height:350px;
+border-radius:50%;
 background:#7c3aed;
-filter:blur(150px);
-opacity:.2;
+filter:blur(180px);
+opacity:.15;
 bottom:-100px;
 right:-100px;
+z-index:-1;
 }
 
-.card{
-position:relative;
-width:100%;
-max-width:650px;
-padding:40px;
+.container{
+max-width:850px;
+margin:auto;
+padding:40px 20px;
 text-align:center;
-
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.1);
-
-backdrop-filter:blur(18px);
-border-radius:30px;
-
-box-shadow:
-0 20px 60px rgba(0,0,0,.35);
-z-index:1;
 }
 
 .profile{
-width:110px;
-height:110px;
+width:120px;
+height:120px;
+margin:auto;
 border-radius:50%;
 overflow:hidden;
-margin:auto;
 border:4px solid rgba(255,255,255,.15);
+box-shadow:0 0 25px rgba(0,136,204,.3);
 }
 
 .profile img{
@@ -91,66 +75,115 @@ object-fit:cover;
 
 .badge{
 display:inline-block;
-margin-top:18px;
+margin-top:20px;
 padding:8px 18px;
-background:rgba(0,170,255,.15);
-border:1px solid rgba(0,170,255,.4);
-color:#6dd5ff;
 border-radius:30px;
+background:rgba(0,136,204,.15);
+border:1px solid rgba(0,136,204,.4);
+color:#64d2ff;
 font-size:13px;
 }
 
 h1{
-color:#fff;
-font-size:42px;
 margin-top:20px;
+font-size:48px;
+font-weight:700;
 }
 
 h1 span{
 color:#00aaff;
 }
 
-.sub{
+.subtitle{
+margin-top:15px;
 color:#cbd5e1;
-margin-top:12px;
 font-size:18px;
 line-height:1.7;
+}
+
+.promo{
+margin-top:30px;
+padding:25px;
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.12);
+border-radius:22px;
+backdrop-filter:blur(10px);
+text-align:left;
+max-width:720px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.promo h2{
+font-size:32px;
+margin-bottom:12px;
+color:#00aaff;
+}
+
+.promo-note{
+margin-bottom:8px;
+color:#94a3b8;
+font-size:14px;
+}
+
+.promo-text{
+margin-bottom:16px;
+font-size:18px;
+line-height:1.6;
+color:#e2e8f0;
+}
+
+.promo-features{
+list-style:none;
+padding-left:0;
+margin:0;
+}
+
+.promo-features li{
+margin:10px 0;
+font-size:16px;
+color:#d1d5db;
+}
+
+.promo-features li::before{
+content:"✔";
+color:#22c55e;
+display:inline-block;
+width:24px;
 }
 
 .stats{
 display:flex;
 justify-content:center;
-gap:15px;
-margin-top:30px;
+gap:20px;
 flex-wrap:wrap;
+margin-top:35px;
 }
 
-.box{
-padding:15px 20px;
+.stat{
+padding:20px;
+width:150px;
 background:rgba(255,255,255,.05);
-border-radius:15px;
-min-width:120px;
+border-radius:20px;
+backdrop-filter:blur(10px);
 }
 
-.box h2{
-color:white;
-}
-
-.box p{
-color:#94a3b8;
-font-size:13px;
+.stat h2{
+color:#00aaff;
 }
 
 .features{
-margin-top:30px;
+margin-top:40px;
 text-align:left;
+max-width:550px;
+margin-left:auto;
+margin-right:auto;
 }
 
 .features li{
 list-style:none;
-color:#fff;
-margin:12px 0;
-font-size:16px;
+margin:14px 0;
+font-size:17px;
 }
 
 .features li::before{
@@ -161,50 +194,41 @@ margin-right:10px;
 }
 
 .telegram-btn{
-display:inline-flex;
-align-items:center;
-gap:10px;
-
+display:inline-block;
 margin-top:35px;
 padding:18px 40px;
-
 background:#0088cc;
 color:white;
-
 text-decoration:none;
-font-size:18px;
-font-weight:600;
-
 border-radius:60px;
-
+font-size:20px;
+font-weight:600;
 transition:.3s;
-box-shadow:
-0 10px 30px rgba(0,136,204,.35);
+box-shadow:0 10px 30px rgba(0,136,204,.4);
 }
 
 .telegram-btn:hover{
 transform:translateY(-4px);
-box-shadow:
-0 15px 40px rgba(0,136,204,.55);
 }
 
 .timer{
 display:flex;
 justify-content:center;
-gap:12px;
-margin-top:25px;
+gap:15px;
 flex-wrap:wrap;
+margin-top:35px;
 }
 
 .time-box{
-padding:12px;
-width:80px;
 background:rgba(255,255,255,.05);
+padding:15px;
+width:90px;
 border-radius:15px;
 }
 
 .time-box h3{
 color:#00aaff;
+font-size:24px;
 }
 
 .time-box span{
@@ -213,82 +237,183 @@ color:#94a3b8;
 }
 
 .footer{
-margin-top:25px;
+margin-top:30px;
 color:#94a3b8;
-font-size:14px;
 }
 
-@media(max-width:768px){
+/* TELEGRAM POPUP */
 
-h1{
-font-size:30px;
+#telegramPopup{
+position:fixed;
+bottom:20px;
+right:20px;
+width:280px;
+background:rgba(17,24,39,.95);
+backdrop-filter:blur(15px);
+border-radius:18px;
+padding:15px;
+box-shadow:0 15px 40px rgba(0,0,0,.35);
+z-index:999;
+animation:slideUp .5s ease;
 }
 
-.card{
-padding:25px;
+@keyframes slideUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
-.telegram-btn{
-width:100%;
-justify-content:center;
-}
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(0,136,204,.7);
+        }
+        50% {
+            transform: scale(1.04);
+            box-shadow: 0 0 0 18px rgba(0,136,204,0);
+        }
+        100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(0,136,204,0);
+        }
+    }
 
-}
+    .telegram-btn,
+    .popup-btn,
+    #telegramPopup {
+        animation: pulse 2s infinite ease-in-out;
+    }
+
+    .popup-header{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    }
+
+    .popup-header img{
+    width:42px;
+    }
+
+    .popup-header h3{
+    font-size:15px;
+    }
+
+    .popup-header p{
+    font-size:12px;
+    color:#94a3b8;
+    }
+
+    .popup-btn{
+    display:block;
+    margin-top:15px;
+    padding:12px;
+    background:#0088cc;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    border-radius:12px;
+    font-weight:600;
+    }
+
+    .close{
+    position:absolute;
+    top:8px;
+    right:10px;
+    cursor:pointer;
+    color:#999;
+    }
+
+    @media(max-width:768px){
+
+    h1{
+    font-size:34px;
+    }
+
+    .telegram-btn{
+    width:100%;
+    }
+
+    #telegramPopup{
+    width:250px;
+    right:10px;
+    bottom:10px;
+    }
+
+    }
 
 </style>
 </head>
 <body>
 
-<div class="card">
+<div class="bg-blur"></div>
+<div class="bg-blur2"></div>
+
+<div class="container">
 
 <div class="profile">
-<img src="profile.jpg">
+<img src="profile.jpg" alt="Profile">
 </div>
 
 <div class="badge">
-SEBI REGISTERED
+🚀 TELEGRAM COMMUNITY
 </div>
 
-<h1>INTRADAY <span>MATCH</span></h1>
+<h1>JOIN OUR <span>TELEGRAM</span></h1>
 
-<p class="sub">
-Verified Nifty • BankNifty • Options Trading Signals
-with Professional Market Analysis.
+<p class="subtitle">
+Get instant updates, premium content, signals,
+announcements and exclusive community access.
 </p>
+
+<div class="promo">
+<h2>INTRADAY MATCH</h2>
+<p class="promo-note">(SEBI REGISTERED INH000011954)</p>
+<p class="promo-text">Learn how to trade with INTRADAY MATCH™ experts</p>
+<ul class="promo-features">
+<li>Options Trading Ab Rocket Science Nahi!</li>
+<li>7,00,000+ Subscribers</li>
+<li>✅ SEBI Registered - Ab Trading Mein Bharosa Pakka</li>
+<li>✅ Roz Milenge Nifty, Banknifty, Stock & Options ke Verified Signals.</li>
+<li>✅ One-Stop Destination for Serious Traders in India.</li>
+</ul>
+</div>
 
 <div class="stats">
 
-<div class="box">
+<div class="stat">
 <h2>7L+</h2>
-<p>Subscribers</p>
+<p>Members</p>
 </div>
 
-<div class="box">
-<h2>95%</h2>
-<p>Accuracy</p>
+<div class="stat">
+<h2>24/7</h2>
+<p>Updates</p>
 </div>
 
-<div class="box">
-<h2>24×7</h2>
-<p>Support</p>
+<div class="stat">
+<h2>100%</h2>
+<p>Free Access</p>
 </div>
 
 </div>
 
 <ul class="features">
-<li>Verified Trading Signals</li>
-<li>Daily Market Analysis</li>
-<li>Premium Educational Content</li>
-<li>Risk Management Strategies</li>
-<li>Instant Telegram Updates</li>
+<li>Instant Telegram Notifications</li>
+<li>Exclusive Community Content</li>
+<li>Daily Updates & Announcements</li>
+<li>Premium Resources</li>
+<li>Active Support Community</li>
 </ul>
 
-<a href="https://t.me/YOUR_TELEGRAM_LINK"
-class="telegram-btn"
-target="_blank">
-
-📨 Join Telegram Now
-
+<a href="https://t.me/YOUR_CHANNEL_USERNAME"
+target="_blank"
+class="telegram-btn">
+📨 Join Telegram Channel
 </a>
 
 <div class="timer">
@@ -316,8 +441,32 @@ target="_blank">
 </div>
 
 <div class="footer">
-Limited Access • Join Before Slots Fill Up
+Limited Access • Join Now 🚀
 </div>
+
+</div>
+
+<!-- Popup -->
+
+<div id="telegramPopup" style="display:none;">
+
+<div class="close" onclick="closePopup()">✕</div>
+
+<div class="popup-header">
+<img src="https://telegram.org/img/t_logo.png" alt="Telegram logo">
+
+<div>
+<h3>Join Telegram</h3>
+<p>Get instant updates</p>
+</div>
+
+</div>
+
+<a href="https://t.me/YOUR_CHANNEL_USERNAME"
+target="_blank"
+class="popup-btn">
+Join Now
+</a>
 
 </div>
 
@@ -327,23 +476,44 @@ const targetDate = new Date();
 targetDate.setHours(targetDate.getHours()+24);
 
 function updateTimer(){
+    const now = new Date().getTime();
+    const distance = targetDate - now;
 
-const now = new Date().getTime();
-const distance = targetDate - now;
-
-const days = Math.floor(distance/(1000*60*60*24));
-const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
-const seconds = Math.floor((distance%(1000*60))/1000);
-
-document.getElementById("days").innerHTML = days;
-document.getElementById("hours").innerHTML = hours;
-document.getElementById("minutes").innerHTML = minutes;
-document.getElementById("seconds").innerHTML = seconds;
-
+    document.getElementById("days").innerHTML =
+        Math.floor(distance/(1000*60*60*24));
+    document.getElementById("hours").innerHTML =
+        Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+    document.getElementById("minutes").innerHTML =
+        Math.floor((distance%(1000*60*60))/(1000*60));
+    document.getElementById("seconds").innerHTML =
+        Math.floor((distance%(1000*60))/1000);
 }
 
+updateTimer();
 setInterval(updateTimer,1000);
+
+const popup = document.getElementById("telegramPopup");
+
+function showPopup() {
+    popup.style.display = "block";
+    popup.style.animation = "slideUp 0.5s ease";
+}
+
+function closePopup() {
+    popup.style.display = "none";
+    setTimeout(showPopup, 15000);
+}
+
+setTimeout(showPopup, 3000);
+setInterval(() => {
+    popup.animate([
+        { transform: "scale(1)" },
+        { transform: "scale(1.08)" },
+        { transform: "scale(1)" }
+    ], {
+        duration: 1000
+    });
+}, 30000);
 
 </script>
 
